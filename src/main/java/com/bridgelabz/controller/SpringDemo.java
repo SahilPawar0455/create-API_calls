@@ -22,7 +22,11 @@ public class SpringDemo {
 
     @PostMapping("/body3")
     public String sayHello3(@RequestBody User user){
-        return "Hello "+user.getFname()+" "+user.getLname();
+        return "Hello "+user.getFname()+" "+user.getLname()+" From Bridgelabz";
     }
 
+    @PutMapping("/body4{fname}")
+    public String sayHello4(@PathVariable String fname,@RequestParam (value = "lname") String lname){
+        return "Hello "+fname+" "+lname+" From Bridgelabz";
+    }
 }
