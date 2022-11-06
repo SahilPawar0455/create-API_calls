@@ -14,4 +14,9 @@ public class SpringDemo {
         return "Hello "+ name+" From Bridgelabz";
     }
 
+    @RequestMapping("/body{name}")
+    public String sayHello2(@PathVariable String name){
+        return "Hello "+ name+" From Bridgelabz";
+    }
+
 }
