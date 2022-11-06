@@ -1,5 +1,6 @@
 package com.bridgelabz.controller;
 
+import com.bridgelabz.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,9 +15,14 @@ public class SpringDemo {
         return "Hello "+ name+" From Bridgelabz";
     }
 
-    @RequestMapping("/body{name}")
+    @RequestMapping("/body2{name}")
     public String sayHello2(@PathVariable String name){
         return "Hello "+ name+" From Bridgelabz";
+    }
+
+    @PostMapping("/body3")
+    public String sayHello3(@RequestBody User user){
+        return "Hello "+user.getFname()+" "+user.getLname();
     }
 
 }
